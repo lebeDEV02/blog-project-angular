@@ -1,0 +1,9 @@
+<div class="register-page">
+<h1 class="register-page__title">Register page</h1>
+<form class="register-page__form" [formGroup]="form" (ngSubmit)="handleSubmit()">
+	<fieldset class="register-page__fieldset"><input type="text" class="register-page__name-input" placeholder="username" formControlName="username"></fieldset>
+	<fieldset class="register-page__fieldset"><input type="email" class="register-page__mail-input" placeholder="email" formControlName="email"></fieldset>
+	<fieldset class="register-page__fieldset"><input type="password" class="register-page__password-input" placeholder="password" formControlName="password"></fieldset>
+	<button class="register-page__submit-button" type="submit">Submit</button>
+</form>
+</div>
