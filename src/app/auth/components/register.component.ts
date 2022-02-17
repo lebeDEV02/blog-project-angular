@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Store } from "@ngrx/store";
+import { registerAction } from "../store/actions";
 
 @Component({
 	selector: 'bp-register',
@@ -11,10 +13,11 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class RegisterComponent implements OnInit {
 	form: FormGroup
 
-	constructor(private fb: FormBuilder){}
+	constructor(private fb: FormBuilder, private store: Store){}
 
    handleSubmit(): void {
 		console.log("Submitted successfully", this.form.value)
+		this.store.dispatch(registerAction(this.form.value))
 	}
 initializeForm():void{
 }
